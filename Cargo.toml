@@ -1,0 +1,8 @@
+[package]
+name = "zasm"
+version = "0.1.0"
+authors = ["Joilson Rabelo <joilson.rabello@gmail.com>"]
+
+[dependencies]
+pest = "^1.0.0-beta"
+pest_derive = "^1.0.0-beta"

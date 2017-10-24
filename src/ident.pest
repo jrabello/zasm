@@ -1,0 +1,20 @@
+alpha = { 'a'..'z' | 'A'..'Z' }
+
+program = { soi ~ instructions ~ eoi}
+instructions = _{ instruction_id+ }
+
+tokens = _{ (instruction_id | reg | mem | imm | separator | whitespace)+ }
+
+reg = { 'a'..'f' | 'A'..'F' }
+mem = { "@" ~ hex ~ ("H"|"h")}
+imm = { "#" ~ hex ~ ("H"|"h")}
+separator = _{ "," }
+
+instruction_id = { (mov | stp) }
+mov = { "mov" }
+stp = { "stp" }
+
+hex = { (digit | 'a'..'f' | 'A'..'F')+ }
+digits = { digit+ }
+digit = { '0'..'9' }
+whitespace = _{ (" " | "\t" | "\r" | "\n")+ }
