@@ -1,6 +1,8 @@
 extern crate pest;
-#[macro_use]
-extern crate pest_derive;
+extern crate num_traits;
+#[macro_use] extern crate pest_derive;
+#[macro_use] extern crate enum_primitive_derive;
+
 
 mod scanner;
 mod code_generator;
@@ -15,11 +17,11 @@ fn main() {
          mov @33h, a
          stp",
     );
-    println!("{:?}", tokens);
-
+    
     // generating code    
     let mut cg = code_generator::CodeGenerator::new();
     let bytes = cg.start(tokens);
+    println!("{}", bytes.len());
 
     // write compiled program to a file 
     use std::io::prelude::*;

@@ -6,3 +6,5 @@ authors = ["Joilson Rabelo <joilson.rabello@gmail.com>"]
 [dependencies]
 pest = "^1.0.0-beta"
 pest_derive = "^1.0.0-beta"
+enum-primitive-derive = "0.1.2"
+num-traits = "0.1.40"
